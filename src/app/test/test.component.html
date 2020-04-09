@@ -1,0 +1,108 @@
+<h1>Interpolation</h1>
+<p>Mon prénom est : {{ prenom }}</p>
+<h5> {{ 2 + 2 }}</h5>
+<h5> {{ "welcome " + prenom}}</h5>
+<h5> {{ prenom.length}}</h5>
+<h5> {{ greetUser() }}</h5>
+<h5> {{ url }}</h5>
+
+<hr>
+
+<h1>Property Binding</h1>
+<!--
+    
+pour s'addresser à un attribu html pour le transformer en propriété, on doit mettre des brackets [] 
+ici l'expemple avec disabled dit : sans bracket, qu'on le determine à true ou false, peu importe, l'attribut html désactive l'input car c'est son taff et pas autre chose.
+Si on bind cette attribut, alors il devient une propriété du dom et ça nous permet de lui dire [disabled]="false" qui revient à désactiver son effet, donc on peut reécrire dedans.
+
+on peut binder un attribut html
+ soit [comme_ca] 
+ soit bind-comme_ca
+
+-->
+<input [id]="myId" type="text" value="Fabieng" >
+<input [disabled]="isDisabled" id={{myId}} type="text" value="Fabieng" >
+<hr>
+
+<h1>Class Binding</h1>
+
+<h5 class="text-success">- Class dans le css</h5>
+<h5 [class]="successClass">- Class bindé via la variable successClass dans le component</h5>
+<h5 class="text-special" [class]="successClass">- Double classe, priorité  donné à la classe bindée</h5>
+
+<h5 [class.text-danger]="hasError">Bindé true ou false sur une classe avec [class.ma_proprieté_dans_style]="ma_variable_dans_component_true_ou_false"</h5>
+
+<h5 [ngClass]="messageClasses">ngClasse : on peut donner un object  dans lequel on renseigne les classes dans styles, ensuite on peut dynamiquement assigner selon la logique du component les différentes classes</h5>
+
+<hr>
+
+
+<h1>Style Binding</h1>
+
+<h5 [style.color]="'red'"> Ecrire du css dans l'html directement avec [style.color]=" ' red ' "  </h5>
+<h5 [style.color]="hasError ? 'blue' : 'purple'"> Rendu conditionel avec [style.color]="hasError" ? 'blue' : 'purple' ", le style venant du component est donc écrasé par cette condition dans le template</h5>
+
+<h5 [style.color]="highLightColor">Binding d'une variable highLightColor à yellow</h5>
+<h5 [ngStyle]="titleStyles">ngStyle permet de passé un object</h5>
+
+<hr>
+
+<h1>Event Binding</h1>
+
+<button (click)="handleClick($event)">Click me</button>
+{{greeting}}
+<button (click)="greeting='A la volé dans le html $event.type n\'est pas accessible'">Click me 2</button>
+
+<hr>
+
+<h1>Template References Varaibles</h1>
+<h2>Template to Class Component - Event bing</h2>
+<input #myInpn ut type="text">
+<button (click)="logMessage(myInput.value)">Log </button>
+
+<hr>
+
+<h1>Two Way Binding</h1>
+<input [(ngModel)]="name" type="text"> {{name}}
+
+<hr>
+<h1>Structural Directives</h1>
+<button (click)='conditionClick()'>Conditionnal Button</button>
+<h5 *ngIf='displayCondition; then thenBlock; else elseBlock'>
+    methode conditionClick() + (click)
+    <!-- 
+        ici vu qu'on utilise then et else dans le if, cette balise n'apparaitra jamais car elle n'est pas traité comme elle devrait, ici on lit uniquement les conditions pour afficher then ou else, la balise if ne s'est que d'information pour cette algorithme et n'affichera pas ses informations
+     -->
+</h5>
+
+<ng-template #elseBlock>
+
+    <h5>
+        balise ng template gérée avec un id-attribut <span [style.color]="'red'">#elseBlock</span> et une condition else & then dans le ngIf
+    </h5>
+
+</ng-template>
+
+<ng-template #thenBlock>
+
+    <h5>
+        balise ng template gérée avec un id-attribut <strong>#thenBlock</strong> et une condition else & then dans le ngIf
+    </h5>
+
+</ng-template>
+
+<hr>
+<h1>Component Interaction</h1>
+<h2>Parent à Enfant</h2>
+<p>Pour sortir une variable du Parent à l'enfant : Déclarer une variable  public nom = "Fabiwabi" dans le parent puis binder dans le parent sur la balise enfant [dataDuParent]="nom", utiliser @Input dans l'enfant puis crée une variable qui l'acceuil dans le component enfant, ensuite interpoller la variable dans le template</p>
+<p>{{nom}}</p>
+<hr><br>
+<h2>Enfant à Parent</h2>
+<p>
+    Pour sortir une variable de l'Enfant au Parent on doit utiliser @Output et EventEmitter dans l'enfant qu'on importe en haut, puis on crée dans le template enfant un evenement (click ou skon veut d'autre), dans le parent, on receptionne dans la balise enfant, grace à un attribut du même nom que ma variable .emit, puis on lui assigne une variable (ici message) qu'on détermine être =$event. (c'est ici le point de jonction) ensuite on initie une variable vide dans le parent. tjrs dans le parents, dessous la balise de l'enfant, on peut extraire la variable message, qui remplira notre variable vide de ce qui lui est .emit dans l'enfant
+</p>
+<button (click)="triggerEvent()">Enfant to Parent</button>
+
+
+
+
