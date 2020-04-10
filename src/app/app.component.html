@@ -156,12 +156,15 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: rgb(24, 57, 163);
     text-decoration: none;
   }
 
   a:hover {
-    color: #125699;
+    color: rgb(165, 165, 42);
+  }
+  a.yeet {
+    color:red;
   }
 
   .terminal {
@@ -267,6 +270,7 @@
     list-style-type:none;
     
   }
+  
 
 
 
@@ -355,14 +359,16 @@
 <div>
   <nav>
       <ul>
-       <li><a routerLink="/interpolation">Interpolation</a></li>
-       <li><a routerLink="/propertybinding">Property Binding</a></li> 
-        <li><a routerLink="/classbinding">Class Binding</a></li> 
-        <li><a routerLink="/stylebinding">Style Binding</a></li> 
-        <li><a routerLink="/eventbinding">Event Binding</a></li> 
-        <li><a routerLink="/twowaybinding">Two way Binding</a></li> 
-        <li><a routerLink="/parentofcomponentinteraction">Component Interaction</a></li> 
-        <li><a routerLink="/pipes">Pipes</a></li>
+       <li><a routerLink="/interpolation" routerLinkActive="yeet">Interpolation</a></li>
+       <li><a routerLink="/propertybinding" routerLinkActive="yeet">Property Binding</a></li> 
+        <li><a routerLink="/classbinding" routerLinkActive="yeet">Class Binding</a></li> 
+        <li><a routerLink="/stylebinding" routerLinkActive="yeet">Style Binding</a></li> 
+        <li><a routerLink="/eventbinding" routerLinkActive="yeet">Event Binding</a></li> 
+        <li><a routerLink="/twowaybinding" routerLinkActive="yeet">Two way Binding</a></li> 
+        <li><a routerLink="/parentofcomponentinteraction" routerLinkActive="yeet">Component Interaction</a></li> 
+        <li><a routerLink="/pipes" routerLinkActive="yeet">Pipes</a></li>
+        <li><a routerLink="/employee-list" routerLinkActive="yeet">List Employées</a></li>
+
       </ul>
   </nav>
 </div>

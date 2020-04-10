@@ -9,6 +9,9 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { ComponentInteractionComponent } from './component-interaction/component-interaction.component';
 import { ParentOfComponentInteractionComponent } from './parent-of-component-interaction/parent-of-component-interaction.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+
 
 
 
@@ -26,6 +29,8 @@ const routes: Routes = [
   { path: 'componentinteraction', component: ComponentInteractionComponent},
   { path: 'parentofcomponentinteraction', component: ParentOfComponentInteractionComponent},
   { path: 'pipes', component: PipesComponent},
+  { path: 'employee-list', component: EmployeeListComponent},
+  { path: 'employee-detail', component: EmployeeDetailComponent},
 ];
 
 @NgModule({
@@ -44,5 +49,7 @@ export const routingComponents = [
   TwoWayBindingComponent,
   ComponentInteractionComponent,
   ParentOfComponentInteractionComponent,
-  PipesComponent
+  PipesComponent,
+  EmployeeListComponent,
+  EmployeeDetailComponent
  ];
