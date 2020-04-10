@@ -1,0 +1,14 @@
+<div style="background-color: rgb(250, 181, 181);">
+    <h1 style="color:red">Enfant - Component interaction</h1>
+    <h2>Parent à Enfant</h2>
+    <p>Pour sortir une variable du Parent à l'enfant : Déclarer une variable  public nom = "Fabiwabi" dans le parent puis binder dans le parent sur la balise enfant [dataDuParent]="nom", utiliser @Input dans l'enfant puis crée une variable qui l'acceuil dans le component enfant, ensuite interpoller la variable dans le template</p>
+    <p>{{nom}}</p>
+    <hr><br>
+    <h2>Enfant à Parent</h2>
+    <p>
+        Pour sortir une variable de l'Enfant au Parent on doit utiliser @Output et EventEmitter dans l'enfant qu'on importe en haut, puis on crée dans le template enfant un evenement (click ou skon veut d'autre), dans le parent, on receptionne dans la balise enfant, grace à un attribut du même nom que ma variable .emit, puis on lui assigne une variable (ici message) qu'on détermine être =$event. (c'est ici le point de jonction) ensuite on initie une variable vide dans le parent. tjrs dans le parents, dessous la balise de l'enfant, on peut extraire la variable message, qui remplira notre variable vide de ce qui lui est .emit dans l'enfant
+    </p>
+    <button (click)="triggerEvent()">Enfant to Parent</button>
+
+    <hr>
+</div>

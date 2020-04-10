@@ -1,0 +1,14 @@
+<h1>Event Binding</h1>
+
+<button (click)="handleClick($event)">Click me</button>
+{{greeting}}
+<button (click)="greeting='A la volé dans le html $event.type n\'est pas accessible'">Click me 2</button>
+
+<hr>
+
+<h1>Template References Varaibles</h1>
+<h2>Template to Class Component - Event bing</h2>
+<input #myInput type="text">
+<button (click)="logMessage(myInput.value)">Log </button>
+<p *ngIf="text_taper">{{text_taper}}</p>
+<hr>

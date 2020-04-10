@@ -1,0 +1,11 @@
+<h1>Class Binding</h1>
+
+<h5 class="text-success">- Class dans le css</h5>
+<h5 [class]="successClass">- Class bindé via la variable successClass dans le component</h5>
+<h5 class="text-special" [class]="successClass">- Double classe, priorité  donné à la classe bindée</h5>
+
+<h5 [class.text-danger]="hasError">Bindé true ou false sur une classe avec [class.ma_proprieté_dans_style]="ma_variable_dans_component_true_ou_false"</h5>
+
+<h5 [ngClass]="messageClasses">ngClasse : on peut donner un object  dans lequel on renseigne les classes dans styles, ensuite on peut dynamiquement assigner selon la logique du component les différentes classes</h5>
+
+<hr>

@@ -1,0 +1,14 @@
+<h1>Style Binding</h1>
+
+<h5 [style.color]="'red'"> Ecrire du css dans l'html directement avec [style.color]=" ' red ' "  </h5>
+<h5 [style.color]="hasError ? 'blue' : 'purple'"> Rendu conditionel avec [style.color]="hasError" ? 'blue' : 'purple' ", le style venant du component est donc écrasé par cette condition dans le template</h5>
+
+<h5 [style.color]="highLightColor">Binding d'une variable highLightColor à yellow</h5>
+<h5 [ngStyle]="titleStyles">ngStyle permet de passé un object ici :
+    <span>  public titleStyles = 
+        color: 'blue',
+        fontStyle: 'italic'
+    </span>
+</h5>
+ 
+<hr>

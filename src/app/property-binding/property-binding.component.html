@@ -1,0 +1,17 @@
+
+<h1>Property Binding</h1>
+<p>    
+    pour s'addresser à un attribu html pour le transformer en propriété, on doit mettre des brackets [] 
+    ici l'expemple avec disabled dit : sans bracket, qu'on le determine à true ou false, peu importe, l'attribut html désactive l'input car c'est son taff et pas autre chose.
+    Si on bind cette attribut, alors il devient une propriété du dom et ça nous permet de lui dire [disabled]="false" qui revient à désactiver son effet, donc on peut reécrire dedans.
+    
+    on peut binder un attribut html
+     soit [comme_ca] 
+     soit bind-comme_ca
+</p>
+
+
+
+<input [id]="myId" type="text" value="Fabieng" >
+<input [disabled]="isDisabled" id={{myId}} type="text" value="Fabieng" >
+<hr>

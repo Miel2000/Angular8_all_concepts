@@ -1,0 +1,7 @@
+<div style="background-color: rgb(231, 228, 228) ;">
+    <h1 style="color:purple">Parent Component</h1>
+    
+    <app-component-interaction (childEvent)="message=$event" [dataDuParent]="nom"></app-component-interaction>
+    
+    <p>{{ message }}</p>
+</div>

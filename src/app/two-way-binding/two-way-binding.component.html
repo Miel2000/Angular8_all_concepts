@@ -1,0 +1,30 @@
+<h1>Two Way Binding</h1>
+<input [(ngModel)]="name" type="text"> {{name}}
+
+<hr>
+<h1>Structural Directives</h1>
+<button (click)='conditionClick()'>Conditionnal Button</button>
+<h5 *ngIf='displayCondition; then thenBlock; else elseBlock'>
+    methode conditionClick() + (click)
+    <!-- 
+        ici vu qu'on utilise then et else dans le if, cette balise n'apparaitra jamais car elle n'est pas traité comme elle devrait, ici on lit uniquement les conditions pour afficher then ou else, la balise if ne s'est que d'information pour cette algorithme et n'affichera pas ses informations
+     -->
+</h5>
+
+<ng-template #elseBlock>
+
+    <h5>
+        balise ng template gérée avec un id-attribut <span [style.color]="'red'">#elseBlock</span> et une condition else & then dans le ngIf
+    </h5>
+
+</ng-template>
+
+<ng-template #thenBlock>
+
+    <h5>
+        balise ng template gérée avec un id-attribut <strong>#thenBlock</strong> et une condition else & then dans le ngIf
+    </h5>
+
+</ng-template>
+
+<hr>

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Fab angular tuto';
-  public nom = 'Fabiwabi';
 
-  public message = "";
+
+  public message = '';
 }

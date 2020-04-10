@@ -1,0 +1,19 @@
+
+<h1>Pipes</h1>
+
+<p>{{ namePipe | lowercase }} | <strong>lowercase</strong></p>
+<p>{{ namePipe | uppercase }} | <strong>uppercase</strong></p>
+<p>{{ msgPipe  | titlecase }} | <strong>titlecase</strong></p>
+<p>{{ namePipe | slice:3 }} | <strong>slice:3 (Fab deleted)</strong></p> 
+<p>{{ person   | json}} | <strong>json</strong></p>
+
+<p>{{ 5.678 | number:'1.2-3' }} number:'1.2-3' </p>
+<p>{{ 5.67833333 | number:'3.4-5' }} number:'3.4-5'</p>
+<p>{{ 5.678 | number:'3.1-2' }} number:'3.1-2'</p>
+
+<p>{{ 0.25 | percent }} percent</p>
+<p>{{ 2000 | currency:'EUR': 'code' }} currency: 'EUR' : 'code' (optional) -> EUR = ISO code</p>
+<p>{{ date | date }} | date</p>
+<p>{{ date | date:'shortDate' }} | date:'shortDate' </p>
+<p>{{ date | date:'shortTime' }} | date:'shortTime' </p>
+

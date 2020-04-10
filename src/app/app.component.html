@@ -263,6 +263,12 @@
     width: 1920px;
   }
 
+  ul {
+    list-style-type:none;
+    
+  }
+
+
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -328,7 +334,7 @@
 
 <div class="content" role="main">
 
-  <!-- Highlight Card -->
+  <!-- Highlight Card 
   <div class="card highlight-card card-small">
 
     <svg id="rocket" alt="Rocket Ship" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
@@ -343,9 +349,22 @@
 
     <span>{{ title }} app is running!</span>
   </div>
-    <app-test (childEvent)="message=$event" [dataDuParent]="nom"></app-test>
    
-    <p>{{ message }}</p>
-
+-->
+<h1 style="color:green">Angular 8 Concepts</h1>
+<div>
+  <nav>
+      <ul>
+       <li><a routerLink="/interpolation">Interpolation</a></li>
+       <li><a routerLink="/propertybinding">Property Binding</a></li> 
+        <li><a routerLink="/classbinding">Class Binding</a></li> 
+        <li><a routerLink="/stylebinding">Style Binding</a></li> 
+        <li><a routerLink="/eventbinding">Event Binding</a></li> 
+        <li><a routerLink="/twowaybinding">Two way Binding</a></li> 
+        <li><a routerLink="/parentofcomponentinteraction">Component Interaction</a></li> 
+        <li><a routerLink="/pipes">Pipes</a></li>
+      </ul>
+  </nav>
+</div>
 
 <router-outlet></router-outlet>
