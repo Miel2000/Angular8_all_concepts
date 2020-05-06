@@ -11,6 +11,7 @@ import { ParentOfComponentInteractionComponent } from './parent-of-component-int
 import { PipesComponent } from './pipes/pipes.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'pipes', component: PipesComponent},
   { path: 'employee-list', component: EmployeeListComponent},
   { path: 'employee-detail', component: EmployeeDetailComponent},
+  { path: '**', component:   PageNotFoundComponent},
 ];
 
 @NgModule({
@@ -51,5 +53,6 @@ export const routingComponents = [
   ParentOfComponentInteractionComponent,
   PipesComponent,
   EmployeeListComponent,
-  EmployeeDetailComponent
+  EmployeeDetailComponent,
+  PageNotFoundComponent
  ];
