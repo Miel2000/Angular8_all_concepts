@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../employee';
 import { Observable } from 'rxjs';
+import { map, filter, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +12,30 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   private _url: string = '/assets/data/employees.json';
+  public id;
+  public employees;
 
 
   getEmployeesByApi(): Observable<IEmployee[]> {
     return this.http.get<IEmployee[]>(this._url);
   }
-
-  getEmployees() {
-    return [
-      {'id': 1, 'name': 'Benoit', 'age': 30},
-      {'id': 2, 'name': 'Romaing', 'age': 24},
-      {'id': 3, 'name': 'Jean', 'age': 35},
-      {'id': 4, 'name': 'Charles', 'age': 50}
-    ];
-  }
 }
+
+  // getOneEmployeeByApi(id: number): Observable<IEmployee[]> {
+  //   return this.getEmployeesByApi()
+  //     .map(employees => employees.find(employee => employee.id === id));
+  //   }
+  // }
+
+  // getEmployees() {
+  //   return [
+  //     {'id': 1, 'name': 'Benoit', 'age': 30},
+  //     {'id': 2, 'name': 'Romaing', 'age': 24},
+  //     {'id': 3, 'name': 'Jean', 'age': 35},
+  //     {'id': 4, 'name': 'Charles', 'age': 50}
+  //   ];
+  // }
+
 
   /*
     explication d'un observable.

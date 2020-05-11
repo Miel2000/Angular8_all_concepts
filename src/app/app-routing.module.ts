@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'parentofcomponentinteraction', component: ParentOfComponentInteractionComponent},
   { path: 'pipes', component: PipesComponent},
   { path: 'employee-list', component: EmployeeListComponent},
-  { path: 'employee-detail', component: EmployeeDetailComponent},
+  { path: 'employee-detail/:id', component: EmployeeDetailComponent},
   { path: '**', component:   PageNotFoundComponent},
 ];
 

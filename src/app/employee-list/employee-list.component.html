@@ -1,8 +1,11 @@
 <h1>Service Employee</h1>
 <div>
     <ul>
-        <li  *ngFor='let employee of employees'> {{ employee.name }} | {{ employee.age }} ans <!-- <a (click)="/employee-detail/{id}">Details</a></li> -->
+        <li (click)="onSelect(employee)" *ngFor='let employee of employees'> {{ employee.name }} | {{ employee.age }} ans   | id : {{ employee.id }}
+          
+        </li> 
     </ul>
+  
 </div>
 <p>
     explication d'un observable.<br>

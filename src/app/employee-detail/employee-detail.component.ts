@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeService } from '../services/employee.service';
+import { ActivatedRoute } from '@angular/router';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-employee-detail',
@@ -9,12 +12,25 @@ import { EmployeeService } from '../services/employee.service';
 export class EmployeeDetailComponent implements OnInit {
 
   public employees = [];
-  constructor(private _employeeService: EmployeeService) { }
+  public employeeId: number;
+  public employeeName: string;
+  
+ 
+
+  constructor(private _employeeService: EmployeeService,
+                      private route: ActivatedRoute) { }
 
   ngOnInit() {
-   // this.employees = this._employeeService.getEmployees();
-   this._employeeService.getEmployeesByApi()
-       .subscribe(data => this.employees = data);
-  }
+
+    let id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.employeeId = id;
+  
+    this._employeeService.getEmployeesByApi()
+    .subscribe(data => this.employees = data);
+      }
+  
+
+    
+
 
 }
