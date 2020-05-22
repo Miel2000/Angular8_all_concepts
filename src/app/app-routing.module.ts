@@ -12,8 +12,9 @@ import { PipesComponent } from './pipes/pipes.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-
+import { TypescriptExoComponent } from './typescript-exo/typescript-exo.component';
+import { ApiUsersComponent } from './api-users/api-users.component';
+import { ApiUserDetailComponent } from './api-user-detail/api-user-detail.component';
 
 
 
@@ -32,6 +33,9 @@ const routes: Routes = [
   { path: 'pipes', component: PipesComponent},
   { path: 'employee-list', component: EmployeeListComponent},
   { path: 'employee-detail/:id', component: EmployeeDetailComponent},
+  { path: 'typescript-exo', component: TypescriptExoComponent},
+  { path: 'api-users', component: ApiUsersComponent},
+  { path: 'api-user-detail/:id', component: ApiUserDetailComponent},
   { path: '**', component:   PageNotFoundComponent},
 ];
 
@@ -54,5 +58,8 @@ export const routingComponents = [
   PipesComponent,
   EmployeeListComponent,
   EmployeeDetailComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  TypescriptExoComponent,
+  ApiUsersComponent,
+  ApiUserDetailComponent
  ];

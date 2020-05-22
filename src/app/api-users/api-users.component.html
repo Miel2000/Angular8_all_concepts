@@ -1,0 +1,33 @@
+
+
+<div style="position:fixed; left: 10px; top: 80px; width: 300px; background-color:grey;border-radius: 25% 10%; opacity: 0.9" >
+  <span style="text-align: center; opacity: 1;" *ngIf="website">
+    <p>Name : {{ website.name }}</p>
+    <p>Email : {{ website.email }}</p>
+    <p>Rue : {{ website.address.street }}</p>
+    <p>Apt : {{ website.address.suite }}</p>
+    <p>City : {{ website.address.city }}</p>
+    <p>CP : {{ website.address.zipcode }}</p>
+      <ul style="list-style: none;">
+        <li>Lattitude: {{website.address.geo.lat}}</li>
+        <li>Longitude: {{website.address.geo.lng}}</li>
+      </ul>
+    <p>Phone : {{website.phone}}</p>
+    <p>Website : <a href="www.{{website.website}}">www.{{website.website}}</a> </p>
+  </span>
+</div>
+<li style="list-style: none;" *ngFor="let user of monTab ">
+  <hr>
+ 
+ <p>Name : {{user.name}} </p> 
+ <p>Email : {{user.email}}</p> 
+  
+
+  <button (click)="onClick($event)" id={{user.id}}>Detail User</button>
+
+
+</li>
+
+
+
+

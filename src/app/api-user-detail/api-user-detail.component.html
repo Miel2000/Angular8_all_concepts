@@ -1,0 +1,27 @@
+<p>api-user-detail works!</p>
+
+<li style="list-style: none;" *ngFor="let user of monGars ">
+  <hr>
+ 
+ <p>Name : {{user.name}} </p> 
+ <p>Email : {{user.email}}</p> 
+  
+ 
+  <ul> Rue {{user.address.street}}</ul>
+  <ul> Apt {{user.address.suite}}</ul>
+  <ul> City : {{user.address.city}}</ul>
+  <ul> CP : {{user.address.zipcode}}</ul>
+  <ul>
+    <ul>
+     
+      <p>Latitude : {{user.address.geo.lat}}</p>
+      <p>Longitude : {{user.address.geo.lng}}</p>
+    </ul>
+  </ul>
+  <ul>Phone : {{user.phone}}</ul>
+  <ul>Website : {{user.website}}</ul>
+</li>
+
+
+
+
